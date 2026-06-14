@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>DFC - التطبيق الرسمي | حمل الآن</title>
-    <!-- Google Fonts: نسخة عربية + انجليزية -->
+    <title>DFC - تسوق من الصين إلى العراق | حمل التطبيق الآن</title>
+    <meta name="description" content="تطبيق DFC: تسوق البضائع الجديدة والمستعملة من الصين وشحنها مباشرة إلى العراق. أفضل الأسعار، شحن موثوق، تجربة تسوق سهلة.">
+    <meta name="keywords" content="DFC, تسوق من الصين, شحن إلى العراق, بضائع صينية, ملابس, إلكترونيات, أثاث, استيراد">
+    <meta name="author" content="DFC">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="DFC - تسوق من الصين إلى العراق">
+    <meta property="og:description" content="تطبيق DFC: تسوق البضائع الجديدة والمستعملة من الصين وشحنها مباشرة إلى العراق.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/512?text=DFC">
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,7 +25,7 @@
 
         body {
             font-family: 'Cairo', 'Segoe UI', sans-serif;
-            background: linear-gradient(145deg, #f8faff 0%, #eef2fc 100%);
+            background: linear-gradient(145deg, #f5f7fc 0%, #e8edf5 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -25,131 +33,159 @@
             padding: 1.5rem;
         }
 
-        /* البطاقة الرئيسية */
         .landing-card {
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
-            background: rgba(255,255,255,0.94);
+            background: rgba(255,255,255,0.96);
             backdrop-filter: blur(2px);
-            border-radius: 3rem;
-            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.02);
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25), 0 2px 12px rgba(0,0,0,0.05);
             overflow: hidden;
             transition: transform 0.2s ease;
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 1px solid rgba(255,255,255,0.6);
         }
 
-        /* القسم العلوي */
+        /* Hero section - colors inspired by China/Iraq trade (red/gold/dark blue) */
         .hero {
-            background: linear-gradient(135deg, #0B2B40 0%, #1C4E6F 100%);
-            padding: 2.5rem 2rem 2rem 2rem;
+            background: linear-gradient(135deg, #8B1E1E 0%, #C0392B 50%, #1A3A4A 100%);
+            padding: 2.2rem 2rem 2rem 2rem;
             text-align: center;
             color: white;
-            border-bottom-left-radius: 1.5rem;
-            border-bottom-right-radius: 1.5rem;
+            border-bottom-left-radius: 1.8rem;
+            border-bottom-right-radius: 1.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "🇨🇳 ➜ 🇮🇶";
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            font-size: 0.7rem;
+            opacity: 0.2;
+            letter-spacing: 6px;
         }
 
         .app-icon {
             width: 90px;
             height: 90px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.18);
             backdrop-filter: blur(8px);
             border-radius: 24px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
             border: 1px solid rgba(255,255,255,0.3);
         }
 
         .app-icon i {
-            font-size: 3.3rem;
-            color: white;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            font-size: 3.4rem;
+            color: #FFD966;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            letter-spacing: -0.3px;
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
         }
 
         .tagline {
             font-size: 1rem;
             font-weight: 500;
-            opacity: 0.9;
-            max-width: 380px;
-            margin: 0 auto;
+            opacity: 0.92;
+            max-width: 450px;
+            margin: 0.5rem auto 0;
             line-height: 1.5;
         }
 
-        .badge {
+        .features-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .feature-chip {
+            background: rgba(255,255,255,0.15);
+            border-radius: 60px;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+        }
+        .feature-chip i {
+            font-size: 0.7rem;
+        }
+
+        .badge-qr {
             margin-top: 1rem;
             display: inline-block;
             background: rgba(255,255,255,0.2);
-            padding: 0.25rem 0.9rem;
+            padding: 0.25rem 1rem;
             border-radius: 40px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            backdrop-filter: blur(4px);
         }
 
-        /* قسم التحميل */
+        /* Download section */
         .download-section {
-            padding: 2.5rem 2rem 2.8rem 2rem;
+            padding: 2.2rem 2rem 2.5rem 2rem;
             text-align: center;
         }
 
-        .qr-preview {
-            margin-bottom: 2rem;
-        }
-
-        .qr-badge {
+        .info-trade {
+            background: #FEF3E2;
+            border-radius: 60px;
+            padding: 0.6rem 1.2rem;
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: #f0f4fe;
-            padding: 0.5rem 1.2rem;
-            border-radius: 80px;
-            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: #1C4E6F;
-            border: 1px solid #cddfed;
+            color: #B85C1A;
+            border: 1px solid #FFD58C;
         }
-
-        .qr-badge i {
-            font-size: 1.2rem;
+        .info-trade i {
+            font-size: 1rem;
+            color: #E67E22;
         }
 
         .btn-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.2rem;
-            margin: 2rem 0 1rem;
+            gap: 1.3rem;
+            margin: 1.5rem 0 1rem;
         }
 
-        /* تصميم الأزرار (متاجر) */
         .store-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: #1a1e2b;
-            padding: 0.9rem 1.8rem;
+            background: #1a2a3a;
+            padding: 0.85rem 1.8rem;
             border-radius: 60px;
             text-decoration: none;
             color: white;
             font-weight: 700;
-            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.1);
-            min-width: 220px;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            min-width: 230px;
             justify-content: center;
         }
 
         .store-btn i {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
         }
 
         .btn-text {
@@ -162,7 +198,6 @@
             font-weight: 500;
             opacity: 0.85;
             display: block;
-            letter-spacing: 0.3px;
         }
 
         .btn-text span {
@@ -170,77 +205,75 @@
             font-weight: 800;
         }
 
-        /* ألوان خاصة بكل متجر */
         .google-play {
-            background: #0f1722;
+            background: #0F2A35;
         }
         .google-play:hover {
-            background: #1f2a3e;
+            background: #1C4E6F;
             transform: scale(1.02);
-            box-shadow: 0 12px 22px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.18);
         }
 
         .app-store {
             background: #000000;
         }
         .app-store:hover {
-            background: #1c1c2e;
+            background: #2C2C3A;
             transform: scale(1.02);
-            box-shadow: 0 12px 22px rgba(0,0,0,0.15);
         }
 
-        /* معلومات إضافية */
-        .info-note {
+        .shipping-note {
             margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #4b5876;
-            background: #eef2fa;
-            display: inline-block;
-            padding: 0.45rem 1.2rem;
-            border-radius: 60px;
-        }
-
-        .info-note i {
-            margin-left: 6px;
+            background: #EFF3F8;
+            border-radius: 50px;
+            padding: 0.7rem 1.2rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
             font-size: 0.75rem;
+            color: #2C3E50;
+        }
+        .shipping-note i {
+            color: #C0392B;
         }
 
         hr {
-            margin: 1.5rem auto 0;
-            width: 60px;
+            margin: 1.5rem auto 0.5rem;
+            width: 70px;
             border: 0;
             height: 2px;
-            background: #cddfed;
+            background: #D5DCE6;
             border-radius: 2px;
         }
 
-        /* استجابة للجوال */
+        .footer-note {
+            font-size: 0.7rem;
+            color: #6C7A8E;
+            margin-top: 1rem;
+        }
+
         @media (max-width: 550px) {
             .hero {
-                padding: 1.8rem 1.2rem;
+                padding: 1.5rem 1rem;
             }
             h1 {
                 font-size: 1.7rem;
             }
             .store-btn {
                 width: 100%;
-                max-width: 280px;
-                padding: 0.8rem 1.2rem;
+                max-width: 270px;
+                padding: 0.75rem 1rem;
             }
             .btn-container {
                 gap: 1rem;
             }
             .download-section {
-                padding: 1.8rem 1.2rem;
+                padding: 1.6rem 1.2rem;
             }
-            .btn-text {
-                text-align: center;
+            .features-row {
+                gap: 0.6rem;
             }
-        }
-
-        /* حركات ظهور */
-        .landing-card {
-            animation: fadeSlideUp 0.5s ease-out;
         }
 
         @keyframes fadeSlideUp {
@@ -253,6 +286,9 @@
                 transform: translateY(0);
             }
         }
+        .landing-card {
+            animation: fadeSlideUp 0.55s ease-out;
+        }
     </style>
 </head>
 <body>
@@ -260,32 +296,35 @@
 <div class="landing-card">
     <div class="hero">
         <div class="app-icon">
-            <!-- أيقونة مميزة DFC (شحن / طاقة رقمية) -->
-            <i class="fas fa-charging-station"></i>
+            <!-- أيقونة تعبر عن التجارة والشحن -->
+            <i class="fas fa-box-open"></i>
         </div>
         <h1>DFC</h1>
         <div class="tagline">
-            ذكي · سريع · موثوق<br>
-            جرب نظام DFC البيئي المتطور
+            تسوق من الصين • جديد ومستعمل • شحن سريع إلى العراق
         </div>
-        <div class="badge">
-            <i class="fas fa-qrcode"></i> امسح الرمز وثبّت التطبيق
+        <div class="features-row">
+            <span class="feature-chip"><i class="fas fa-shipping-fast"></i> شحن مباشر</span>
+            <span class="feature-chip"><i class="fas fa-tags"></i> جديد & مستعمل</span>
+            <span class="feature-chip"><i class="fas fa-currency-dollar"></i> أسعار تنافسية</span>
+            <span class="feature-chip"><i class="fas fa-headset"></i> دعم بالعربية</span>
+        </div>
+        <div class="badge-qr">
+            <i class="fas fa-qrcode"></i> حمّل التطبيق الآن
         </div>
     </div>
 
     <div class="download-section">
-        <div class="qr-preview">
-            <div class="qr-badge">
-                <i class="fas fa-mobile-alt"></i>
-                <span>تطبيق DFC الرسمي</span>
-                <i class="fas fa-arrow-down"></i>
-            </div>
+        <div class="info-trade">
+            <i class="fas fa-globe-asia"></i>
+            <span>🇨🇳 الصين → 🇮🇶 العراق | بضائع أصلية، ملابس، إلكترونيات، أثاث، سيارات، و更多</span>
+            <i class="fas fa-truck"></i>
         </div>
 
-        <!-- زران التحميل: Google Play و App Store -->
+        <!-- روابط حقيقية وفق ما قدمته -->
         <div class="btn-container">
-            <!-- Google Play -->
-            <a href="#" class="store-btn google-play" id="googlePlayBtn" target="_blank" rel="noopener noreferrer">
+            <!-- Google Play: الرابط المباشر -->
+            <a href="https://play.google.com/store/apps/details?id=com.chinak.app" class="store-btn google-play" target="_blank" rel="noopener noreferrer" id="googlePlayBtn">
                 <i class="fab fa-google-play"></i>
                 <div class="btn-text">
                     <small>احصل عليه من</small>
@@ -293,71 +332,51 @@
                 </div>
             </a>
             
-            <!-- App Store -->
-            <a href="#" class="store-btn app-store" id="appStoreBtn" target="_blank" rel="noopener noreferrer">
+            <!-- App Store: الرابط المباشر -->
+            <a href="https://apps.apple.com/cn/app/dfc-%D8%AF%D9%8A-%D8%A7%D9%81-%D8%B3%D9%8A/id6760597610?l=en-GB" class="store-btn app-store" target="_blank" rel="noopener noreferrer" id="appStoreBtn">
                 <i class="fab fa-apple"></i>
                 <div class="btn-text">
-                    <small>تحميل من</small>
+                    <small>تحميل على</small>
                     <span>App Store</span>
                 </div>
             </a>
         </div>
 
-        <div class="info-note">
-            <i class="fas fa-qrcode"></i> امسح رمز QR مرّة أخرى · تحميل آمن
+        <div class="shipping-note">
+            <i class="fas fa-check-circle"></i>
+            <span>بضائع جديدة ومستعملة بجودة مضمونة</span>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>شحن لجميع محافظات العراق</span>
         </div>
+
         <hr />
-        <div style="margin-top: 1.2rem; font-size: 0.7rem; color: #6c7a91;">
-            <i class="fas fa-shield-alt"></i> التوزيع الرسمي · DFC الإصدار 3.0
+        <div class="footer-note">
+            <i class="fas fa-mobile-alt"></i> امسح رمز QR لتحميل التطبيق | DFC - وجهتك الأولى للتجارة من الصين إلى العراق
         </div>
     </div>
 </div>
 
 <script>
-    // روابط حقيقية لمتجر Google Play ومتجر Apple (بناءً على معرفة DFC)
-    // يمكن استبدالها بالروابط الفعلية للتطبيق. نضع أمثلة واقعية لتجربة سلسة.
-    // (بفرض أن DFC موجود على المتاجر، لكن في حال عدم وجود روابط محددة يتم استخدام روابط توضيحية)
-    // لضمان تجربة المستخدم: إذا كان لديك رابط فعلي فضعه مكان placeholder.
+    // الروابط الفعلية للتطبيق كما قدمتها
+    // تأكيد إضافي: عند النقر على الأزرار تفتح المتاجر مباشرة
+    console.log("✅ DFC Landing Page | Google Play & App Store links are ready (e-commerce China to Iraq)");
     
-    // الرابط الحقيقي لمتجر Google Play (مثال توضيحي يحاكي تطبيق DFC، حيث أن DFC معروف)
-    // نستخدم رابطًا حقيقيًا لتطبيق DFC في حال كان موجودًا - لكن بشكل آمن نضع رابط demo حقيقي لصفحة DFC إن وجد.
-    // ولأنني لا أملك معرفة بالرابط المباشر لـ DFC لكن أذكر أن العميل يعرفه، نضع روابط مثالية قابلة للتعديل فورياً.
-    // وسنضيف alert تنبيه للمطور لسهولة التعديل مع الاحتفاظ بوظيفة نموذجية.
-    
-    // روابط حقيقية قابلة للاستبدال (يمكنك تغييرها بسهولة)
-    // للتوضيح: نضع روابط حقيقية لمشاريع نموذجية (لكن يمكن تعديلها من خلال متغيرات).
-    const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.dfc.app";   // استبدل برابط DFC الفعلي
-    const APP_STORE_URL = "https://apps.apple.com/app/dfc-official/id123456789";            // استبدل بمعرف التطبيق الفعلي
-    
-    // في حال عدم وجود التطبيق على المتاجر بعد، يمكن تفعيل التنبيه.
-    // ولكننا نعطي حرية التعديل المباشر للمستخدم.
-    
+    // optional: أي تحليلات أو تأكيد للمستخدم
     const googleBtn = document.getElementById('googlePlayBtn');
     const appleBtn = document.getElementById('appStoreBtn');
     
-    // تحديث الروابط الفعلية
-    if (googleBtn) {
-        googleBtn.href = GOOGLE_PLAY_URL;
-        // فحص إضافي: إذا كان الرابط افتراضيًا ولم يتم تعديله، يمكن عرض رسالة للمطور في الكونسول فقط
+    // للتأكد من أن الروابط صحيحة (يمكنك تعديلها مستقبلا بسهولة من هنا)
+    // لكنها بالفعل مضمنة في href.
+    if(googleBtn) {
         googleBtn.addEventListener('click', function(e) {
-            if (GOOGLE_PLAY_URL === "https://play.google.com/store/apps/details?id=com.dfc.app" && !GOOGLE_PLAY_URL.includes("dfc")) {
-                console.log("🔧 ملاحظة: يرجى تحديث رابط Google Play الخاص بتطبيق DFC الفعلي.");
-            }
+            console.log("توجيه إلى Google Play لتطبيق DFC (التجارة من الصين)");
         });
     }
-    
-    if (appleBtn) {
-        appleBtn.href = APP_STORE_URL;
+    if(appleBtn) {
         appleBtn.addEventListener('click', function(e) {
-            if (APP_STORE_URL === "https://apps.apple.com/app/dfc-official/id123456789") {
-                console.log("📱 ملاحظة: يرجى تحديث رابط App Store الرسمي لـ DFC.");
-            }
+            console.log("توجيه إلى App Store لتطبيق DFC - DFC Iraq China");
         });
     }
-    
-    // توافق مع فكرة QR: المستخدم يصل إلى هذه الصفحة عبر الرمز، والأزرار تقود مباشرة للمتاجر.
-    // إضافة رسالة سريعة للمطور في حال أراد تخصيص الروابط من خلال وحدة التحكم.
-    console.log("✅ صفحة تحميل DFC - عربي | أزرار Google Play و App Store تعمل. استبدل الروابط بالروابط الرسمية للتطبيق.");
 </script>
 </body>
 </html>
